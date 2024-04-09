@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { theme } from '../../../theme'
 
 export const Container = styled.View`
   width: 100%;
@@ -12,13 +13,13 @@ export const FlaListImg = styled.Image`
 `
 export const FlatListText = styled.Text`
   text-align: center;
-  font-size: ${({ theme }) => theme.font_size.lg}px;
-  color: ${({ theme }) => theme.colors.gray_200};
-  font-family: ${({ theme }) => theme.font_family.bold};
+  font-size: ${theme.fontSize.lg}px;
+  color: ${theme.colors.gray_200};
+  font-family: ${theme.fontFamily.bold};
 `
 export const FlatListTextSpan = styled.Text`
   text-align: center;
-  font-size: ${({ theme }) => theme.font_size.lg}px;
-  color: ${({ theme }) => theme.colors.gray_200};
-  font-family: ${({ theme }) => theme.font_family.regular};
+  font-size: ${theme.fontSize.lg}px;
+  color: ${theme.colors.gray_200};
+  font-family: ${theme.fontFamily.regular};
 `

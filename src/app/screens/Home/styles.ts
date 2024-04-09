@@ -1,8 +1,13 @@
 import styled from 'styled-components/native'
+import { theme } from '../../../theme'
+
+interface FormInputProps {
+  isFocused: boolean;
+} 
 
 export const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.gray_600};
+  background-color: ${theme.colors.gray_600};
   position: 'relative';
 `
 export const FormContainer = styled.View`
@@ -14,16 +19,16 @@ export const FormContainer = styled.View`
   position: absolute;
   flex-direction: row;
 `
-export const FormInput = styled.TextInput`
+export const FormInput = styled.TextInput<FormInputProps>`
   flex: 1;
   height: 56px;
   border-radius: 5px;
   font-size: 16px;
   padding: 16px;
   margin-right: 5px;
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.gray_400};
-  border: 1px solid ${({ isFocused, theme }) => (isFocused ? theme.colors.roxol_escuro : 'transparent')};
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.gray_400};
+  border: 1px solid ${({ isFocused }) => (isFocused ? theme.colors.roxol_escuro : 'transparent')};
 `
 export const FormButton = styled.TouchableOpacity`
   width: 56px;
@@ -31,7 +36,7 @@ export const FormButton = styled.TouchableOpacity`
   border-radius: 5px;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme.colors.azul_escuro};
+  background-color: ${theme.colors.azul_escuro};
 `
 export const FormButtontContainer = styled.View`
   
@@ -41,7 +46,7 @@ export const FlatListContainer = styled.View`
 `
 
 export const FormButtonContent = styled.View`
-  border: 2px solid ${({ theme }) => theme.colors.white};
+  border: 2px solid ${theme.colors.white};
   width: 26px;
   height: 26px;
   justify-content: center;
@@ -50,8 +55,8 @@ export const FormButtonContent = styled.View`
   overflow: hidden;
 `
 export const FormButtonText = styled.Text`
-  color: ${({ theme }) => theme.colors.white};
-  font-size: ${({ theme }) => theme.font_size.md}px;
+  color: ${theme.colors.white};
+  font-size: ${theme.fontSize.md}px;
 `
 export const CounterContainer = styled.View`
   margin: 32px 0;
@@ -74,14 +79,14 @@ export const CompletedText = styled.View`
   flex-direction: row;
 `
 export const Criada = styled.Text`
-  color: ${({ theme }) => theme.colors.azul};
-  font-size: ${({ theme }) => theme.font_size.lg}px;
-  font-family: ${({ theme }) => theme.font_family.bold};
+  color: ${theme.colors.azul};
+  font-size: ${theme.fontSize.lg}px;
+  font-family: ${theme.fontFamily.bold};
 `
 export const Completed = styled.Text`
-  color: ${({ theme }) => theme.colors.roxo};
-  font-size: ${({ theme }) => theme.font_size.lg}px;
-  font-family: ${({ theme }) => theme.font_family.bold};
+  color: ${theme.colors.roxo};
+  font-size: ${theme.fontSize.lg}px;
+  font-family: ${theme.fontFamily.bold};
 `
 export const Counter = styled.Text`
   padding: 2px 10px;
@@ -89,8 +94,8 @@ export const Counter = styled.Text`
   align-items: center;
   border-radius: 28px;
   overflow: hidden;
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.gray_400};
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.gray_400};
 `
 export const CounterCompleted = styled.Text`
   padding: 2px 10px;
@@ -98,10 +103,10 @@ export const CounterCompleted = styled.Text`
   align-items: center;
   border-radius: 28px;
   overflow: hidden;
-  color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.gray_400};
+  color: ${theme.colors.white};
+  background-color: ${theme.colors.gray_400};
 `
 export const Divider = styled.View`
-  border: 0.5px solid ${({ theme }) => theme.colors.gray_100};
+  border: 0.5px solid ${theme.colors.gray_100};
   
 `

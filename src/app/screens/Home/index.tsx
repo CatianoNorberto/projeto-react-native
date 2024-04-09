@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { TouchableOpacity, Alert, FlatList } from 'react-native'
 
+import { Header } from '../../components/Header'
+import { Task } from '../../components/Task'
+import { Highlight } from '../../components/Highlight'
 
 import { 
   Container, 
@@ -22,14 +25,10 @@ import {
   FlatListContainer
 } from './styles'
 
-import { Header } from '../../components/Header'
-import { Task } from '../../components/Task'
-import { Highlight } from '../../components/Highlight'
-
 export function Home(){
   const [tasks, setTasks] = useState<{ name: string; completed: boolean }[]>([]);
   const [taskInfo, setTaskInfo] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
 
   function handleTaskAdd() {
     if (tasks.some(task => task.name === taskInfo)) {
@@ -73,9 +72,9 @@ export function Home(){
           placeholderTextColor="#808080"
           onChangeText={setTaskInfo}
           value={taskInfo}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          isFocused={isFocused}
+          onFocus={() => setIsInputFocused(true)}
+          onBlur={() => setIsInputFocused(false)}
+          isFocused={isInputFocused as boolean}
         />
         <FormButton 
           onPress={handleTaskAdd}
